@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">Каталог товаров и услуг</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    {% for product in products %}
+    <div class="col" style="max-width: 480px;">
+      <div class="card h-100 shadow-sm mx-auto">
+        {% if product.image %}
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" style="object-fit: cover; height: 200px;" alt="Картинка к {{ product.title }}">
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ product.title }}</h5>
+          {# Если нужна дата создания, раскомментируйте и добавьте в контекст #}
+          {# <p class="text-muted mb-2" style="font-size: 0.9rem;">{{ product.created_at|date:"d.m.Y H:i" }}</p> #}
+          <p class="card-text flex-grow-1">
+            {{ product.text|slice:":200" }}{% if product.text|length > 200 %}...{% endif %}
+          </p>
+          <a href="{% url 'catalog:product_detail' pk=product.id %}">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>Товаров пока нет.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

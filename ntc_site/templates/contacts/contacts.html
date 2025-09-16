@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-5">
+          <h1 class="card-title text-center mb-4">Контакты</h1>
+          <p class="lead text-center mb-4">
+            Мы всегда рады сотрудничеству, вопросам и предложениям! Свяжитесь с нами удобным для вас способом.
+          </p>
+          <hr>
+
+          <h3 class="mb-3 mt-4">Форма обращения</h3>
+          <p>Вы можете обратиться к нам, используя <a href="{% url 'contacts:create_request' %}">онлайн форму</a>.</p>
+          <h3 class="mb-3 mt-4">Адрес</h3>
+          <p>
+            Научно-Технический Центр Оптоэлектроники<br>
+            Московский Политех<br>
+            ул. Большая Семёновская, д. 38<br>
+            Москва, 107023, Россия
+          </p>
+
+          <h3 class="mb-3 mt-4">Телефон</h3>
+          <p>Николаев Владимир Константинович</p>
+          <p>Начальник НТЦ "Оптоэлектроники"</p>
+          <p>+7 (924) 739-70-00</p>
+          <br>
+          <p>Скворцов Аркадий Алексеевич</p>
+          <p>Начальник НТЦ "Оптоэлектроники"</p>
+          <p>+7 (925) 832-03-85</p>
+
+          <h3 class="mb-3 mt-4">Электронная почта</h3>
+          <p>info@ntc-opto.ru</p>
+
+          <h3 class="mb-3 mt-4">Часы работы</h3>
+          <p>
+            Понедельник — Пятница: 9:00 — 18:00<br>
+            Суббота, Воскресенье: выходные
+          </p>
+
+          <h3 class="mb-3 mt-4">Социальные сети</h3>
+          <ul class="list-group list-group-flush mb-0">
+            <li class="list-group-item">
+              <a href="https://vk.com/ntcopto" target="_blank" rel="noopener noreferrer">VK</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://facebook.com/ntcopto" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://t.me/ntcopto" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
